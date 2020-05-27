@@ -3,4 +3,21 @@
     background-color: black;
     width: 75px;
     height: 75px;
+    margin: 15px;
+}
+
+.game-board {
+    display: flex;
+    flex-direction: row;
+    border: 1px dotted black;
+    width: fit-content;
+}
+
+.column {
+    width: 100px;
+    height: 600px;
+}
+
+.column:nth-child(2n) {
+    background: lightgray;
 }
