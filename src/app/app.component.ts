@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  public translateExp = 'translateX(0px)';
+
+
+  hover(column) {
+    this.translateExp = `translateX(${column}px)`;
+  }
 }
