@@ -1,4 +1,9 @@
-.chip {
+.header-title {
+    font-size: 24px;
+    text-align: center;
+}
+
+.game-board-chip {
     border-radius: 100%;
     background-color: black;
     width: 75px;
@@ -13,11 +18,11 @@
     width: fit-content;
 }
 
-.column {
+.game-board-column {
     width: 100px;
     height: 600px;
 }
 
-.column:nth-child(2n) {
+.game-board-column:nth-child(2n) {
     background: lightgray;
 }
