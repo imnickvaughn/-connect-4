@@ -3,15 +3,19 @@
 <div>Instructions:</div>
 <div>Welcome to Nicholas Vaughn's rendition of Connect 4, hopefully its just like all the other ones!</div>
 <div>Grab a friend and take turns in this classic game. Hover over the column you wish to drop your chip and click the column when you are ready.</div>
+<br>
+<div>{{whosTurnIsIt}}</div>
+<br>
+<br>
 
-<div [ngStyle]="{'transform' : translateExp }" class="game-board-chip game-board-chip-hover-position">
+<div [ngStyle]="{'transform' : translateExp ,'background-color': redTeamsTurn ? redTeamsColor : blackTeamsColor }" class="game-board-chip game-board-chip-hover-position">
 </div>
 <div class="game-board ">
-    <div (mouseover)='hover(0)' id="column0" class="game-board-column "></div>
-    <div (mouseover)='hover(100)' id="column1" class="game-board-column "></div>
-    <div (mouseover)='hover(200)' id="column2" class="game-board-column "></div>
-    <div (mouseover)='hover(300)' id="column3" class="game-board-column "></div>
-    <div (mouseover)='hover(400)' id="column4" class="game-board-column "></div>
-    <div (mouseover)='hover(500)' id="column5" class="game-board-column "></div>
-    <div (mouseover)='hover(600)' id="column6" class="game-board-column "></div>
+    <div (click)="toggleTurn()" (mouseover)='chipHoverTranslate(0)' id="column0" class="game-board-column "></div>
+    <div (click)="toggleTurn()" (mouseover)='chipHoverTranslate(100)' id="column1" class="game-board-column "></div>
+    <div (click)="toggleTurn()" (mouseover)='chipHoverTranslate(200)' id="column2" class="game-board-column "></div>
+    <div (click)="toggleTurn()" (mouseover)='chipHoverTranslate(300)' id="column3" class="game-board-column "></div>
+    <div (click)="toggleTurn()" (mouseover)='chipHoverTranslate(400)' id="column4" class="game-board-column "></div>
+    <div (click)="toggleTurn()" (mouseover)='chipHoverTranslate(500)' id="column5" class="game-board-column "></div>
+    <div (click)="toggleTurn()" (mouseover)='chipHoverTranslate(600)' id="column6" class="game-board-column "></div>
 </div>
