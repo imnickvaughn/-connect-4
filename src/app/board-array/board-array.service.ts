@@ -31,7 +31,7 @@ export class BoardArrayService {
         columnSet: this.initializeColumnArray(columnCount),
         rowSet: this.initializeRowArray(rowCount),
         diagPosSet: this.initializePosDiagArray(i),
-        diagNegSet: []
+        diagNegSet: this.initializeNegDiagArray(i)
       });
       // modify the column and row counts to add this data properly
       columnCount++;
@@ -73,13 +73,13 @@ export class BoardArrayService {
   initializePosDiagArray(id) {
     let posDiagSet = [];
     // find the first number in the set
-    const firstNumberInSet = this.findFirstNumberInSet(id);
-    posDiagSet = this.findRestOfNumbersInSet(firstNumberInSet);
+    const firstNumberInSet = this.findFirstNumberInPosDSet(id);
+    posDiagSet = this.findRestOfNumbersInPosDSet(firstNumberInSet);
     return posDiagSet;
   }
 
 
-  findFirstNumberInSet(num) {
+  findFirstNumberInPosDSet(num) {
     let newNum = num;
     // loop at max 7 times
     for (let i = 0; i < 7; i++) {
@@ -93,7 +93,7 @@ export class BoardArrayService {
     }
   }
 
-  findRestOfNumbersInSet(num) {
+  findRestOfNumbersInPosDSet(num) {
     const newNumArr = [];
     let newNum = num;
     newNumArr.push(num);
@@ -109,4 +109,46 @@ export class BoardArrayService {
       newNumArr.push(newNum);
     }
   }
+
+
+  initializeNegDiagArray(id) {
+    let negDiagSet = [];
+    // find the first number in the set
+    const firstNumberInSet = this.findFirstNumberInNegDSet(id);
+    negDiagSet = this.findRestOfNumbersInNegDSet(firstNumberInSet);
+    return negDiagSet;
+  }
+
+
+  findFirstNumberInNegDSet(num) {
+    let newNum = num;
+    // loop at max 7 times
+    for (let i = 0; i < 7; i++) {
+      // if it hits any of these number you will return the number and exit the function
+      if (newNum <= 6 || newNum === 13 || newNum === 20 || newNum === 27 || newNum === 34 || newNum === 41) {
+        return newNum;
+      }
+      // if it doesn't it will shift the number up and left one position
+      // the loop will then start over and test that number
+      newNum = newNum - this.columnAmount + 1;
+    }
+  }
+
+  findRestOfNumbersInNegDSet(num) {
+    const newNumArr = [];
+    let newNum = num;
+    newNumArr.push(num);
+    // loop at max 7 times
+    for (let i = 0; i < 7; i++) {
+      // if it hits any of these numbers you will exit the loop
+      if (newNum >= 35 || newNum === 0 || newNum === 7 || newNum === 14 || newNum === 21 || newNum === 28) {
+        return newNumArr;
+      }
+      // if it doesn't it will shift the number down and right one position
+      // the loop will then start over and test that number
+      newNum = newNum + this.columnAmount - 1;
+      newNumArr.push(newNum);
+    }
+  }
+
 }
