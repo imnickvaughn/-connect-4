@@ -10,12 +10,15 @@
 
 <div [ngStyle]="{'transform' : translateExp ,'background-color': redTeamsTurn ? redTeamsColor : blackTeamsColor }" class="game-board-chip game-board-chip-hover-position">
 </div>
+<!-- <div *ngFor="let checker of checkers">
+</div> -->
+
 <div class="game-board ">
-    <div (click)="toggleTurn()" (mouseover)='chipHoverTranslate(0)' id="column0" class="game-board-column "></div>
-    <div (click)="toggleTurn()" (mouseover)='chipHoverTranslate(100)' id="column1" class="game-board-column "></div>
-    <div (click)="toggleTurn()" (mouseover)='chipHoverTranslate(200)' id="column2" class="game-board-column "></div>
-    <div (click)="toggleTurn()" (mouseover)='chipHoverTranslate(300)' id="column3" class="game-board-column "></div>
-    <div (click)="toggleTurn()" (mouseover)='chipHoverTranslate(400)' id="column4" class="game-board-column "></div>
-    <div (click)="toggleTurn()" (mouseover)='chipHoverTranslate(500)' id="column5" class="game-board-column "></div>
-    <div (click)="toggleTurn()" (mouseover)='chipHoverTranslate(600)' id="column6" class="game-board-column "></div>
+    <div (click)="toggleTurn(); dropPeice()" (mouseover)='chipHoverTranslate(0)' id="column0" class="game-board-column "></div>
+    <div (click)="toggleTurn(); dropPeice()" (mouseover)='chipHoverTranslate(100)' id="column1" class="game-board-column "></div>
+    <div (click)="toggleTurn(); dropPeice()" (mouseover)='chipHoverTranslate(200)' id="column2" class="game-board-column "></div>
+    <div (click)="toggleTurn(); dropPeice()" (mouseover)='chipHoverTranslate(300)' id="column3" class="game-board-column "></div>
+    <div (click)="toggleTurn(); dropPeice()" (mouseover)='chipHoverTranslate(400)' id="column4" class="game-board-column "></div>
+    <div (click)="toggleTurn(); dropPeice()" (mouseover)='chipHoverTranslate(500)' id="column5" class="game-board-column "></div>
+    <div (click)="toggleTurn(); dropPeice()" (mouseover)='chipHoverTranslate(600)' id="column6" class="game-board-column "></div>
 </div>

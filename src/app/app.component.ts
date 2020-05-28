@@ -1,3 +1,4 @@
+import { BoardArrayService } from './board-array/board-array.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -11,6 +12,8 @@ export class AppComponent {
   public redTeamsTurn = true;
   public redTeamsColor = 'rgba(224, 36, 36, 0.705)';
   public blackTeamsColor = 'rgba(26, 26, 26, 0.705)';
+
+  constructor(public boardArraySvc: BoardArrayService) { }
 
   chipHoverTranslate(column) {
     this.translateExp = `translateX(${column}px)`;
@@ -27,6 +30,9 @@ export class AppComponent {
       this.redTeamsTurn = false;
       this.whosTurnIsIt = blackTeamsTurn;
     }
+  }
+
+  dropPeice() {
 
   }
 }
