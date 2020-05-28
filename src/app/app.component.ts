@@ -32,7 +32,13 @@ export class AppComponent {
     }
   }
 
-  dropPeice() {
-
+  dropPeice(column, color) {
+    console.log('%c⧭', 'color: #aa00ff', column);
+    console.log('%c⧭', 'color: #e50000', color);
+    //creates an entry in the checkers array
+    // this entry would need Xtransform, Ytransform, Color data
+    // it will get x transform from the column data
+    // get y transform from wincondition calcs which is derived from column data
+    // get color from component
   }
 }
