@@ -4,24 +4,29 @@
 
     <div class="header-instructions">
         <div>Instructions:</div>
-        <div>Welcome to Nicholas Vaughn's rendition of Connect 4, hopefully its just like all the other ones!</div>
+        <br>
+        <div>Welcome to Nicholas Vaughn's rendition of Connect 4, hopefully it is just like all the other ones!</div>
+        <br>
         <div>Grab a friend and take turns in this classic game. Hover over the column you wish to drop your chip and click the column when you are ready.</div>
     </div>
     <div class="header-turn">{{whosTurnIsIt}}</div>
 
     <div [ngStyle]="{'transform' : translateExp ,'background-color': redTeamsTurn ? redTeamsColor : blackTeamsColor }" class="game-board-chip game-board-chip-hover-position">
     </div>
+
     <!-- <div *ngFor="let checker of checkers">
-</div> -->
+        <div [ngStyle]="{'transform' : translateExp ,'background-color': redTeamsTurn ? redTeamsColor : blackTeamsColor }" class="game-board-chip game-board-chip-hover-position">
+        </div>
+    </div> -->
 
     <div class="game-board ">
-        <div (click)="toggleTurn(); dropPeice()" (mouseover)='chipHoverTranslate(-300)' id="column0" class="game-board-column "></div>
-        <div (click)="toggleTurn(); dropPeice()" (mouseover)='chipHoverTranslate(-200)' id="column1" class="game-board-column "></div>
-        <div (click)="toggleTurn(); dropPeice()" (mouseover)='chipHoverTranslate(-100)' id="column2" class="game-board-column "></div>
-        <div (click)="toggleTurn(); dropPeice()" (mouseover)='chipHoverTranslate(0)' id="column3" class="game-board-column "></div>
-        <div (click)="toggleTurn(); dropPeice()" (mouseover)='chipHoverTranslate(100)' id="column4" class="game-board-column "></div>
-        <div (click)="toggleTurn(); dropPeice()" (mouseover)='chipHoverTranslate(200)' id="column5" class="game-board-column "></div>
-        <div (click)="toggleTurn(); dropPeice()" (mouseover)='chipHoverTranslate(300)' id="column6" class="game-board-column "></div>
+        <div (click)="toggleTurn(); dropPeice(0, redTeamsTurn)" (mouseover)='chipHoverTranslate(-300)' id="column0" class="game-board-column "></div>
+        <div (click)="toggleTurn(); dropPeice(1, redTeamsTurn)" (mouseover)='chipHoverTranslate(-200)' id="column1" class="game-board-column "></div>
+        <div (click)="toggleTurn(); dropPeice(2, redTeamsTurn)" (mouseover)='chipHoverTranslate(-100)' id="column2" class="game-board-column "></div>
+        <div (click)="toggleTurn(); dropPeice(3, redTeamsTurn)" (mouseover)='chipHoverTranslate(0)' id="column3" class="game-board-column "></div>
+        <div (click)="toggleTurn(); dropPeice(4, redTeamsTurn)" (mouseover)='chipHoverTranslate(100)' id="column4" class="game-board-column "></div>
+        <div (click)="toggleTurn(); dropPeice(5, redTeamsTurn)" (mouseover)='chipHoverTranslate(200)' id="column5" class="game-board-column "></div>
+        <div (click)="toggleTurn(); dropPeice(6, redTeamsTurn)" (mouseover)='chipHoverTranslate(300)' id="column6" class="game-board-column "></div>
     </div>
 
     <img class="game-board-fascade" src="assets/Vector.svg" />
